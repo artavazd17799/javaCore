@@ -1,4 +1,4 @@
-package homework;
+//package homework;
 
 public class DynInit {
     public static void main(String[] args) {
