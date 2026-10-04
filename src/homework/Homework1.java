@@ -1,21 +1,43 @@
 package homework;
-import javax.swing.*;
+
 public class Homework1 {
     public static void main(String[] args) {
-        int x, y;
-
-        x = 10;
-        y = 20;
+        int x = 10;
+        int y = 20;
 
         if (x < y) {
-            System.out.println("x < y");
+            System.out.println("x-ը փոքր է y ից");
+        }
+        if (x > y) {
+            System.out.println("x-ը մեծ է y ից");
+        }
+        if (x == y ) {
+            System.out.println("x- հավասար է y ի ");
+
+            System.out.println("______");
+
+        for(int i = 1; i < 6; i++) {
+            System.out.print(i + " ");
+        }
+            System.out.println("_______");
 
 
-            System.out.println( "\n 1 2 3 4 5 " );
-                System.out.println(n + " * " + i + " = " + (n * i));
+            int a = 6;
+            int b = 7;
+            System.out.println(a +b );
 
-                            }}}
-                        }
+            System.out.println("______");
+
+            int n = 3;
+
+            for(int i = 1; i < 11; i++) {
+                System.out.println(n+ "*" + i + "=" + " " + (n * i ));
+            }
+
+        }
+    }
+}
+
 
 
 
