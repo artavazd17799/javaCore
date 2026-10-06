@@ -2,10 +2,15 @@ package homework;
 
 public class Average {
     public static void main(String[] args) {
-        double nums[] = {10.1,11.2,12.3,13.4,14.5,};
-        double result =0;
-        int i;
-        for( i = 0; i < 5; i++);
-        System.out.println(" = " + result / 5);
+
+        double[]  nums = {10.1,11.2,12.3,13.4,14.5,};
+        double result = 0;
+
+        for(int i = 0; i < 5; i++);{
+            result = result + nums[1];
+        }
+        System.out.println(result/5);
     }
+
+
 }

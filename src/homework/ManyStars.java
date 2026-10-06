@@ -1,22 +1,28 @@
+package homework;
 
 public class ManyStars {
     public static void main(String[] args) {
-        int ManyStars = 5;
-        for (int i = 0; i <= ManyStars; i++) {
+        int starscount = 5;
+        for (int i = 0; i <= starscount; i++) {
 
             for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+                System.out.print("* ");
             }
 
-            System.out.println();
-        }
+
+                System.out.println(" ");
+            }
+
+        System.out.println();
+
 
 
         int rows = 5;
         for (int i = rows; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+                System.out.print("* ");
             }
+
 
             System.out.println();
         }
@@ -25,12 +31,15 @@ public class ManyStars {
         for (int i = 1; i <= rows3; i++) {
             for (int s = rows3; s > i; s--) {
                 System.out.print("  ");
-            }
-            for (int j = 1; j <= i; j++) {
-                System.out.print(" *");
+
 
             }
-            System.out.println();
+            for (int j = 1; j <= i; j++) {
+
+                System.out.print("* ");
+
+            }
+             System.out.println();
         }
         int rows4 = 5;
         for (int i = rows4; i >= 1; i--) {
@@ -40,6 +49,7 @@ public class ManyStars {
             for (int j = 1; j <= i; j++) {
                 System.out.print(" *");
             }
+
 
             System.out.println();
         }

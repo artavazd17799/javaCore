@@ -16,7 +16,7 @@ public class Array {
         month_days[9] = 30;
         month_days[10] = 31;
         month_days[11] = 30;
-        System.out.println("v yanvare" + month_days[0] + "dney.");
+        System.out.println("v yanvare " + month_days[0] + " dney.");
 
 
 
