@@ -1,10 +1,5 @@
 package homework;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.swing.plaf.basic.BasicSplitPaneUI;
-import java.lang.reflect.Array;
-
 public class ArrayUtil {
     public static void main(String[] args) {
 
@@ -59,25 +54,26 @@ public class ArrayUtil {
         System.out.println(" Odd numbers count " + oddCount);
 
         // Խնդիր 9 — Հաշվել զանգվածի էլեմենտների գումարը
-        int Sum = 0;
+        int sum = 0;
         System.out.println();
         for (int i = 0; i < numbers.length; i++) {
-            Sum = Sum + numbers[i];
+            sum = sum + numbers[i];
         }
 
-        System.out.println("Sum: " + Sum);
+        System.out.println("Sum: " + sum);
 
         //Խնդիր 10 — Հաշվել միջին թվաբանականը
         for (int i = 0; i < numbers.length; i++) ;
-        double avrege = (double) Sum / numbers.length;
+        double avrege = (double) sum / numbers.length;
         System.out.println("Avreage:" + avrege);
 
         //Bonus 1 — Գտնել ամենամեծ թիվը
 
         int max = numbers[0];
-        for (int i = 5; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > max) {
                 max = numbers[i];
+
 
             }
 
