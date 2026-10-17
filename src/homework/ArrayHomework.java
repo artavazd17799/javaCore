@@ -80,6 +80,8 @@ public class ArrayHomework {
 
             // Bonus 2 — Հեռացնել կրկնվող թվերը
             int[] bonus2 = {3, 6, 3, 8, 9, 6, 2, 3, 5, 6,};
+            int val = 0;
+            boolean found = false;
             System.out.println("Unique numbers");
             for (int i = 0; i < bonus2.length; i++) {
                 boolean isPrint = false;
