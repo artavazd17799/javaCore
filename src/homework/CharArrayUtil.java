@@ -157,12 +157,12 @@ public class CharArrayUtil {
         //Խնդիր 10 — Ստուգել Palindrome-ը
         char[] palindromeChars = {'l','e','v','e','l'};
 
-        boolean isPalimdrome = false;
+        boolean isPalimdrome = true;
         int length = palindromeChars.length;
 
         for (int i = 0; i < length /2 ; i++) {
             if(palindromeChars[i] != palindromeChars[length -1 -i]) {
-                isPalimdrome = true;
+                isPalimdrome = false;
                 break;
             }
 
