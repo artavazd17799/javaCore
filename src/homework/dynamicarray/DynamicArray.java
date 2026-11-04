@@ -32,16 +32,16 @@ public class  DynamicArray {
     // 3. array փոփոխականը կապել
     //    նոր զանգվածի հետ։
     private void extend() {
-int[] newArray = new int[array.length + 10];
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
+int[] temp = new int[array.length + 10];
+        for (int i = 0; i < size; i++) {
+            temp[i] = array[i];
 
         }
-        array = newArray;
+        array = temp;
     }
 
 
-    // Վերադարձնել տրված ինդեքսի էլեմենտը։
+    // Վերադարձնել տրված ինդեքսի էլեմենտը։dd
     // Եթե index-ը 0-ից մինչև size - 1
     // միջակայքում է, վերադարձնել էլեմենտը։
     // Հակառակ դեպքում վերադարձնել -1։
