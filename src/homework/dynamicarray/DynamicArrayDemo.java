@@ -27,12 +27,9 @@ public class DynamicArrayDemo {
         for (int i = 1; i < 24; i++) {
             da3.add(i * 2);
         }
-        System.out.println("Ավելացվել է 24 տարր, չափը՝ " + da3.getByIndex(23));
-        System.out.print("Բոլոր տարրերը. ");
+        System.out.println("Ավելացվել է 24 տարր։ Ստուգում ենք առաջին և վերջին տարրերը.");
         System.out.println("getByIndex(0) = " + da3.getByIndex(0));
         System.out.println("getByIndex(27) = " + da3.getByIndex(27));
-
-
 
         // --- Թեստ 4 — Ինդեքսով ստանալ էլեմենտ (getByIndex) ---
         System.out.println("\n Թեստ 4 — Ինդեքսով ստանալ էլեմենտ ");
@@ -51,5 +48,4 @@ public class DynamicArrayDemo {
 
         }
     }
-
 
