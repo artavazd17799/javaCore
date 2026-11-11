@@ -1,4 +1,4 @@
-package homework;
+package homeworks;
 
 public class Average {
     public static void main(String[] args) {

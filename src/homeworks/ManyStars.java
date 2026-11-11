@@ -1,4 +1,4 @@
-package homework;
+package homeworks;
 
 public class ManyStars {
     public static void main(String[] args) {

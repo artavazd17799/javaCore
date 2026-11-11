@@ -1,4 +1,4 @@
-package homework.dynamicarray;
+package homeworks.dynamicarray;
 
 public class  DynamicArray {
     // Սա մեր հիմնական զանգվածն է,
