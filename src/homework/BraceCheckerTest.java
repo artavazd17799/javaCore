@@ -1,7 +1,5 @@
 package homework;
 
-import lesson9.B;
-
 public class BraceCheckerTest {
     public static void main(String[] args) {
       String[] tests = {

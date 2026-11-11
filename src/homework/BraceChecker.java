@@ -20,8 +20,7 @@ public class BraceChecker {
 
             if (ch == '{' || ch == '[' || ch == '(') {
                 stack.push(ch);
-            }
-             else if (ch == '}' || ch == ']' || ch == ')') {
+            } else if (ch == '}' || ch == ']' || ch == ')') {
                 if (stack.isEmpty()) {
                     System.out.println("Error Closed " + ch + " but opened at " + i);
                     return;
@@ -31,22 +30,22 @@ public class BraceChecker {
                     System.out.println("Error opened " + last + "but closed " + ch + "at" + i);
                     return;
                 }
-                if (ch == ']' && last != '['){
+                if (ch == ']' && last != '[') {
                     System.out.println("Error opened " + last + "but closed " + ch + " at " + i);
-                return;
+                    return;
+                }
+                if (ch == ')' && last != '(') {
+                    System.out.println("Error opened " + last + " bit closed" + ch + " at " + i);
+                    return;
+                }
             }
-            if (ch == ')' && last != '(') {
-                System.out.println("Error opened " + last + " bit closed" + ch + " at " + i);
-                return;
-             }
-           }
-         }
-            if(!stack.isEmpty()){
+        }
+        if (!stack.isEmpty()) {
 
 
-        System.out.println("Error opened " + stack.peek() + " but not closed");
+            System.out.println("Error opened " + stack.peek() + " but not closed");
         } else {
-          System.out.println("No errors");
+            System.out.println("No errors");
+        }
     }
-    }
-    }
+}
