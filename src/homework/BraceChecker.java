@@ -37,6 +37,7 @@ public class BraceChecker {
             }
             if (ch == ')' && last != '(') {
                 System.out.println("Error opened " + last + " bit closed" + ch + " at " + i);
+                return;
              }
            }
          }
