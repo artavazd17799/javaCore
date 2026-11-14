@@ -1,95 +1,118 @@
 package homeworks.employee;
 
+import java.util.Objects;
+
 public class EmployeeStorage {
     private Employee[] employees = new Employee[10];
     private int size = 0;
 
     public void add(Employee employee) {
-        // Ստուգում ենք, թե արդյոք արդյունքների մեջ կա այս ID-ով աշխատակից
-        if (searchByEmployeeID(employee.getEmployeeID()) != null) {
-            System.out.println("Employee with ID " + employee.getEmployeeID() + " already exists.");
-            return; // Եթե կա, դուրս ենք գալիս մեթոդից և չենք ավելացնում
-        }
         if (size == employees.length) {
-            extendStorage();
-
+            extend();
         }
+
+        if (getById(employee.getEmployeeID()) != null) {
+            System.out.println("Employee with ID " + employee.getEmployeeID() + " already exists!");
+            return;
+        }
+
         employees[size++] = employee;
         System.out.println("Employee successfully added!");
     }
 
-    private void extendStorage() {
+    private void extend() {
         Employee[] tmp = new Employee[employees.length + 10];
-        for (int i = 0; i < employees.length; i++) {
-            tmp[i] = employees[i];
-        }
+        System.arraycopy(employees, 0, tmp, 0, employees.length);
         employees = tmp;
     }
 
-    public void print() {
-        if (size == 0) {
-            System.out.println("No employees found.");
-            return;
-        }
+    public void printAll() {
         for (int i = 0; i < size; i++) {
-            System.out.println("Employee " + (i + 1) + ":");
             System.out.println(employees[i]);
-            System.out.println();
-
         }
     }
 
-    public Employee searchByEmployeeID(String employeeID) {
+    public Employee getById(String id) {
         for (int i = 0; i < size; i++) {
-            if (employees[i].getEmployeeID().equals(employeeID)) {
+            if (employees[i].getEmployeeID().equals(id)) {
                 return employees[i];
             }
-
         }
         return null;
     }
 
-    public void searchByCompany(String companyName) {
+    public void printByCompanyName(String name) {
         boolean found = false;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getCompany().equalsIgnoreCase(companyName)) {
-                System.out.println(employees[i].getName() + " " + employees[i].getSurname() + " - " + employees[i].getPosition());
+            if (employees[i].getCompany() != null && employees[i].getCompany().getName().equalsIgnoreCase(name)) {
+                System.out.println(employees[i].getEmployeeID() + " - " + employees[i].getName() + " " + employees[i].getSurname());
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("No employees found for company " + companyName + ".");
+            System.out.println("No employees found for company name: " + name);
         }
     }
 
-    public void searchByMinSalary(double minSalary) {
+    public void printByCompanyId(String id) {
         boolean found = false;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getSalary() >= minSalary) {
-                System.out.println(employees[i]); // Տպում ենք ամբողջական տվյալները կամ պահանջված ձևաչափով
+            if (employees[i].getCompany() != null && employees[i].getCompany().equals(id)) {
+                System.out.println(employees[i].getEmployeeID() + " - " + employees[i].getName() + " " + employees[i].getSurname());
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("No employees found with salary >= " + minSalary);
+            System.out.println("No employees found for company ID: " + id);
         }
     }
-    public void deleteEmployeeByID(String employeeID) {
-        int index = -1;
-        // 1. Գտնում ենք հեռացվող աշխատակցի ինդեքսը զանգվածում
+
+    public int countByCompanyId(String companyId) {
+        int count = 0;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getEmployeeID().equals(employeeID)) {
+            if (employees[i].getCompany().getCompanyId().equals(companyId)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public double getTotalSalaryByCompanyId(String companyId) {
+        double totalSalary = 0;
+        for (int i = 0; i < size; i++) {
+            if (employees != null && employees[i].getCompany() != null &&
+                    employees[i].getCompany().getCompanyId().equals(companyId)) {
+                totalSalary += employees[i].getSalary();
+            }
+        }
+        return totalSalary;
+    }
+
+    public Employee getHighestSalaryEmployee() {
+        if (size == 0) {
+            return null;
+        }
+        Employee maxEmployee = employees[0];
+        for (int i = 0; i < size; i++) {
+            if (employees[i] != null && employees[i].getSalary() > maxEmployee.getSalary()) {
+                maxEmployee = employees[i];
+            }
+        }
+        return maxEmployee;
+    }
+
+    public void deletById(String employeeId) {
+        int index = -1;
+        for (int i = 0; i < size; i++) {
+            if (employees[i] != null && employees[i].getEmployeeID().equals(employeeId)) {
                 index = i;
                 break;
             }
         }
-
-        // Եթե աշխատակիցը չի գտնվել
         if (index == -1) {
-            System.out.println("Employee with ID " + employeeID + " not found.");
+            System.out.println("Employee with ID " + employeeId + " not found.");
             return;
         }
-
         for (int i = index; i < size - 1; i++) {
             employees[i] = employees[i + 1];
         }
@@ -97,4 +120,8 @@ public class EmployeeStorage {
         size--;
         System.out.println("Employee successfully deleted!");
     }
+
+    public void deleteById(String employeeIdToDelete) {
+    }
 }
+
