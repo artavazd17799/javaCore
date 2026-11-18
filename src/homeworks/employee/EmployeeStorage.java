@@ -1,7 +1,5 @@
 package homeworks.employee;
 
-import java.util.Objects;
-
 public class EmployeeStorage {
     private Employee[] employees = new Employee[10];
     private int size = 0;
@@ -57,7 +55,7 @@ public class EmployeeStorage {
     public void printByCompanyId(String id) {
         boolean found = false;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getCompany() != null && employees[i].getCompany().equals(id)) {
+            if (employees[i].getCompany() != null && employees[i].getCompany().getCompanyId().equals(id)) {
                 System.out.println(employees[i].getEmployeeID() + " - " + employees[i].getName() + " " + employees[i].getSurname());
                 found = true;
             }
@@ -101,7 +99,7 @@ public class EmployeeStorage {
         return maxEmployee;
     }
 
-    public void deletById(String employeeId) {
+    public void deleteById(String employeeId) {
         int index = -1;
         for (int i = 0; i < size; i++) {
             if (employees[i] != null && employees[i].getEmployeeID().equals(employeeId)) {
@@ -121,7 +119,5 @@ public class EmployeeStorage {
         System.out.println("Employee successfully deleted!");
     }
 
-    public void deleteById(String employeeIdToDelete) {
-    }
-}
 
+    }
